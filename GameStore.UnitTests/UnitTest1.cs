@@ -7,7 +7,6 @@ using Moq;
 using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
 using GameStore.WebUI.Controllers;
-using GameStore.WebUI.Models;
 
 namespace GameStore.UnitTests
 {
@@ -16,7 +15,7 @@ namespace GameStore.UnitTests
         [Test]
         public void Can_Paginate()
         {
-            //организация
+            // Организация (arrange)
             Mock<IGameRepository> mock = new Mock<IGameRepository>();
             mock.Setup(m => m.Games).Returns(new List<Game>
             {
@@ -29,11 +28,11 @@ namespace GameStore.UnitTests
             GameController controller = new GameController(mock.Object);
             controller.pageSize = 3;
 
-            //действие
-            GamesListViewModel result = (GamesListViewModel)controller.List(2).Model;
+            // Действие (act)
+            IEnumerable<Game> result = (IEnumerable<Game>)controller.List(2).Model;
 
-            //утверждение
-            List<Game> games = result.Games.ToList();
+            // Утверждение (assert)
+            List<Game> games = result.ToList();
             Assert.IsTrue(games.Count == 2);
             Assert.AreEqual(games[0].Name, "Игра4");
             Assert.AreEqual(games[1].Name, "Игра5");
