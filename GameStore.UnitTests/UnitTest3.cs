@@ -8,13 +8,14 @@ using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
 using GameStore.WebUI.Controllers;
 using GameStore.WebUI.Models;
+using GameStore.WebUI.HtmlHelpers;
 
 namespace GameStore.UnitTests
 {
-    public class UnitTest1
+    public class UnitTest3
     {
         [Test]
-        public void Can_Paginate()
+        public void Can_Send_Pagination_View_Model()
         {
             //организация
             Mock<IGameRepository> mock = new Mock<IGameRepository>();
@@ -30,13 +31,15 @@ namespace GameStore.UnitTests
             controller.pageSize = 3;
 
             //действие
-            GamesListViewModel result = (GamesListViewModel)controller.List(2).Model;
+            GamesListViewModel result
+                = (GamesListViewModel)controller.List(2).Model;
 
             //утверждение
-            List<Game> games = result.Games.ToList();
-            Assert.IsTrue(games.Count == 2);
-            Assert.AreEqual(games[0].Name, "Игра4");
-            Assert.AreEqual(games[1].Name, "Игра5");
+            PagingInfo pageInfo = result.PagingInfo;
+            Assert.AreEqual(pageInfo.CurrentPage, 2);
+            Assert.AreEqual(pageInfo.ItemsPerPage, 3);
+            Assert.AreEqual(pageInfo.TotalItems, 5);
+            Assert.AreEqual(pageInfo.TotalPages, 2);
         }
     }
 }
