@@ -32,7 +32,7 @@ namespace GameStore.UnitTests
 
             //действие
             GamesListViewModel result
-                = (GamesListViewModel)controller.List(2).Model;
+                = (GamesListViewModel)controller.List(null,2).Model;
 
             //утверждение
             PagingInfo pageInfo = result.PagingInfo;

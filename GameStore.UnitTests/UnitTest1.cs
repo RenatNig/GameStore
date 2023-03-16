@@ -30,7 +30,7 @@ namespace GameStore.UnitTests
             controller.pageSize = 3;
 
             //действие
-            GamesListViewModel result = (GamesListViewModel)controller.List(2).Model;
+            GamesListViewModel result = (GamesListViewModel)controller.List(null,2).Model;
 
             //утверждение
             List<Game> games = result.Games.ToList();
