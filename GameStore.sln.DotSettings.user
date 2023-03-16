@@ -7,5 +7,6 @@
       &lt;TestId&gt;NUnit3x::633173AF-6377-4912-B9AE-BF80C36D66DF::.NETFramework,Version=v4.5.1::GameStore.UnitTests.UnitTest2&lt;/TestId&gt;
       &lt;TestId&gt;NUnit3x::633173AF-6377-4912-B9AE-BF80C36D66DF::.NETFramework,Version=v4.5.1::GameStore.UnitTests.UnitTest3.Can_Send_Pagination_View_Model&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
+    &lt;ProjectFile&gt;633173AF-6377-4912-B9AE-BF80C36D66DF/f:UnitTest6.cs&lt;/ProjectFile&gt;
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

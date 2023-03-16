@@ -86,6 +86,8 @@
         <Compile Include="UnitTest2.cs" />
         <Compile Include="UnitTest3.cs" />
         <Compile Include="UnitTest4.cs" />
+        <Compile Include="UnitTest5.cs" />
+        <Compile Include="UnitTest6.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
